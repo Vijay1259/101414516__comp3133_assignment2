@@ -135,13 +135,13 @@ json
 
 
 #### 6. Search Employees
-- **Endpoint:** `GET /api/employees/search`
-- **Description:** Searches employees by name, department, or position
-- **Query Parameters:** `term` - Search term
-- **Example:** `GET /api/employees/search?term=developer`
-- **Response Format:**
-```json
-[
+- Endpoint: `GET /api/employees/search`
+- Description: Searches employees by name, department, or position
+- Query Parameters: term - Search term
+- Example: `GET /api/employees/search?term=developer`
+- Response Format:
+  json
+
   {
     "_id": "string",
     "firstName": "string",
