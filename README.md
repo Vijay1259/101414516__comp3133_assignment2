@@ -64,9 +64,10 @@ Application will run on http://localhost:4200
 - Description: Retrieves a list of all employees
 - Response Format:
 json
-[
+
   {
-    "_id": "string",
+  json:
+     "_id": "string",
     "firstName": "string",
     "lastName": "string",
     "email": "string",
@@ -74,8 +75,7 @@ json
     "position": "string",
     "profile": "string (optional)"
   }
-]
-```
+
 
 #### 2. Get Single Employee
 - Endpoint: `GET /api/employees/:id`
