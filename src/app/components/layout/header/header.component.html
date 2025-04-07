@@ -1,0 +1,18 @@
+<mat-toolbar color="primary">
+  <span>Employee Management</span>
+  <span class="spacer"></span>
+  <nav>
+    <a mat-button routerLink="/employees" routerLinkActive="active">
+      <mat-icon>list</mat-icon>
+      Employees
+    </a>
+    <a mat-button routerLink="/employees/add" routerLinkActive="active">
+      <mat-icon>add</mat-icon>
+      Add Employee
+    </a>
+    <button mat-button (click)="onLogout()">
+      <mat-icon>logout</mat-icon>
+      Logout ({{ userName }})
+    </button>
+  </nav>
+</mat-toolbar> 

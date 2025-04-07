@@ -1,0 +1,41 @@
+<div class="view-employee-container">
+  <div class="header">
+    <h2>View Employee Details</h2>
+  </div>
+
+  <div class="employee-details" *ngIf="employee">
+    <div class="detail-row">
+      <label>First Name:</label>
+      <span>{{employee.firstName}}</span>
+    </div>
+
+    <div class="detail-row">
+      <label>Last Name:</label>
+      <span>{{employee.lastName}}</span>
+    </div>
+
+    <div class="detail-row">
+      <label>Email:</label>
+      <span>{{employee.email}}</span>
+    </div>
+
+    <div class="detail-row">
+      <label>Department:</label>
+      <span>{{employee.department}}</span>
+    </div>
+
+    <div class="detail-row">
+      <label>Position:</label>
+      <span>{{employee.position}}</span>
+    </div>
+
+    <div class="actions">
+      <button mat-raised-button color="primary" (click)="goBack()">Back</button>
+      <button mat-raised-button color="accent" (click)="editEmployee()">Edit</button>
+    </div>
+  </div>
+
+  <div class="loading-container" *ngIf="loading">
+    <mat-spinner diameter="40"></mat-spinner>
+  </div>
+</div> 

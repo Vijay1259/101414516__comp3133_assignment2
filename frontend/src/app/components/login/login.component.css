@@ -1,0 +1,15 @@
+.card {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  label {
+    font-weight: 500;
+  }
+  
+  button {
+    font-weight: bold;
+  }
+  
+  .alert {
+    font-size: 0.9rem;
+  }

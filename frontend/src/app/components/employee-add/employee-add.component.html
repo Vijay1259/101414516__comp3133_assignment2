@@ -1,0 +1,117 @@
+<div class="container">
+  <h2>Add New Employee</h2>
+  <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input
+        type="text"
+        id="firstName"
+        formControlName="firstName"
+        class="form-control"
+        placeholder="Enter first name"
+      />
+      <div
+        *ngIf="addForm.get('firstName')?.invalid && addForm.get('firstName')?.touched"
+        class="text-danger"
+      >
+        First name is required
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="lastName">Last Name</label>
+      <input
+        type="text"
+        id="lastName"
+        formControlName="lastName"
+        class="form-control"
+        placeholder="Enter last name"
+      />
+      <div
+        *ngIf="addForm.get('lastName')?.invalid && addForm.get('lastName')?.touched"
+        class="text-danger"
+      >
+        Last name is required
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        formControlName="email"
+        class="form-control"
+        placeholder="Enter email"
+      />
+      <div
+        *ngIf="addForm.get('email')?.invalid && addForm.get('email')?.touched"
+        class="text-danger"
+      >
+        <span *ngIf="addForm.get('email')?.errors?.['required']">
+          Email is required
+        </span>
+        <span *ngIf="addForm.get('email')?.errors?.['email']">
+          Please enter a valid email
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="department">Department</label>
+      <select
+        id="department"
+        formControlName="department"
+        class="form-control"
+      >
+        <option value="">Select Department</option>
+        <option *ngFor="let dept of departments" [value]="dept">
+          {{dept}}
+        </option>
+      </select>
+      <div
+        *ngIf="addForm.get('department')?.invalid && addForm.get('department')?.touched"
+        class="text-danger"
+      >
+        Department is required
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="position">Position</label>
+      <select
+        id="position"
+        formControlName="position"
+        class="form-control"
+      >
+        <option value="">Select Position</option>
+        <option *ngFor="let pos of positions" [value]="pos">
+          {{pos}}
+        </option>
+      </select>
+      <div
+        *ngIf="addForm.get('position')?.invalid && addForm.get('position')?.touched"
+        class="text-danger"
+      >
+        Position is required
+      </div>
+    </div>
+
+    <div class="button-group">
+      <button
+        type="submit"
+        class="btn btn-success"
+        [disabled]="!addForm.valid"
+      >
+        Add Employee
+      </button>
+      <button
+        type="button"
+        class="btn btn-secondary"
+        (click)="onCancel()"
+      >
+        Cancel
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,32 @@
+<div class="container">
+  <h2>Employees List</h2>
+  
+  <button class="btn btn-primary mb-3" routerLink="/employee-add">Add Employee</button>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Employee First Name</th>
+        <th>Employee Last Name</th>
+        <th>Employee Email Id</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees">
+        <td>{{ employee.firstName }}</td>
+        <td>{{ employee.lastName }}</td>
+        <td>{{ employee.email }}</td>
+        <td>
+          <button class="btn btn-info me-2" (click)="viewEmployee(employee)">View</button>
+          <button class="btn btn-primary me-2" (click)="updateEmployee(employee)">Update</button>
+          <button class="btn btn-danger" (click)="deleteEmployee(employee)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="employees.length === 0" class="alert alert-info">
+    No employees found
+  </div>
+</div>

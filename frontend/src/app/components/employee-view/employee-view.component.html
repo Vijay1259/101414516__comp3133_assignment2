@@ -1,0 +1,43 @@
+<div class="container">
+  <h2>View Employee Details</h2>
+
+  <div class="employee-details" *ngIf="employee">
+    <div class="detail-row">
+      <label>First Name:</label>
+      <span>{{ employee.firstName }}</span>
+    </div>
+
+    <div class="detail-row">
+      <label>Last Name:</label>
+      <span>{{ employee.lastName }}</span>
+    </div>
+
+    <div class="detail-row">
+      <label>Email:</label>
+      <span>{{ employee.email }}</span>
+    </div>
+
+    <div class="detail-row">
+      <label>Department:</label>
+      <span>{{ employee.department || 'Not specified' }}</span>
+    </div>
+
+    <div class="detail-row">
+      <label>Position:</label>
+      <span>{{ employee.position || 'Not specified' }}</span>
+    </div>
+
+    <div class="button-group">
+      <button class="btn btn-primary" (click)="editEmployee()">Edit</button>
+      <button class="btn btn-secondary" (click)="goBack()">Back</button>
+    </div>
+  </div>
+
+  <div class="loading" *ngIf="!employee">
+    Loading employee details...
+  </div>
+</div>
+
+<div *ngIf="errorMessage" class="alert alert-danger text-center mt-4">
+  {{ errorMessage }}
+</div>

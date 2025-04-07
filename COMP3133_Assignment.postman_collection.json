@@ -1,0 +1,188 @@
+{
+  "info": {
+    "_postman_id": "your-collection-id",
+    "name": "COMP3133 Assignment - Employee API",
+    "description": "Collection for testing Employee Management System API endpoints",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get All Employees",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/employees",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "employees"]
+        }
+      }
+    },
+    {
+      "name": "Get Single Employee",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/employees/:id",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "employees", ":id"],
+          "variable": [
+            {
+              "key": "id",
+              "value": "employee-id-here"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Employee",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "firstName",
+              "value": "John",
+              "type": "text"
+            },
+            {
+              "key": "lastName",
+              "value": "Doe",
+              "type": "text"
+            },
+            {
+              "key": "email",
+              "value": "john.doe@example.com",
+              "type": "text"
+            },
+            {
+              "key": "department",
+              "value": "IT",
+              "type": "text"
+            },
+            {
+              "key": "position",
+              "value": "Developer",
+              "type": "text"
+            },
+            {
+              "key": "profile",
+              "type": "file",
+              "src": []
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/employees",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "employees"]
+        }
+      }
+    },
+    {
+      "name": "Update Employee",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "firstName",
+              "value": "John",
+              "type": "text"
+            },
+            {
+              "key": "lastName",
+              "value": "Doe",
+              "type": "text"
+            },
+            {
+              "key": "email",
+              "value": "john.doe@example.com",
+              "type": "text"
+            },
+            {
+              "key": "department",
+              "value": "IT",
+              "type": "text"
+            },
+            {
+              "key": "position",
+              "value": "Senior Developer",
+              "type": "text"
+            },
+            {
+              "key": "profile",
+              "type": "file",
+              "src": []
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/employees/:id",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "employees", ":id"],
+          "variable": [
+            {
+              "key": "id",
+              "value": "employee-id-here"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Delete Employee",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/employees/:id",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "employees", ":id"],
+          "variable": [
+            {
+              "key": "id",
+              "value": "employee-id-here"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Search Employees",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/employees/search?term=developer",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "employees", "search"],
+          "query": [
+            {
+              "key": "term",
+              "value": "developer"
+            }
+          ]
+        }
+      }
+    }
+  ]
+} 

@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "@angular/flex-layout": "^15.0.0-beta.42",
+    "@angular/material": "^19.2.8",
+    "@angular/router": "^19.2.5",
+    "@apollo/client": "^3.13.6",
+    "apollo-angular": "^10.0.3",
+    "bootstrap": "^5.3.5",
+    "graphql": "^16.10.0"
+  }
+}

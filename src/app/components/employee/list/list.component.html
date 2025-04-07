@@ -1,0 +1,59 @@
+<div class="employee-list-container">
+  <div class="header">
+    <h2>Employees List</h2>
+    <button mat-raised-button color="primary" routerLink="/employees/add">
+      Add Employee
+    </button>
+  </div>
+
+  <div class="table-container mat-elevation-z8">
+    <table mat-table [dataSource]="employees">
+      <!-- First Name Column -->
+      <ng-container matColumnDef="firstName">
+        <th mat-header-cell *matHeaderCellDef>Employee First Name</th>
+        <td mat-cell *matCellDef="let employee">{{employee.firstName}}</td>
+      </ng-container>
+
+      <!-- Last Name Column -->
+      <ng-container matColumnDef="lastName">
+        <th mat-header-cell *matHeaderCellDef>Employee Last Name</th>
+        <td mat-cell *matCellDef="let employee">{{employee.lastName}}</td>
+      </ng-container>
+
+      <!-- Email Column -->
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef>Employee Email Id</th>
+        <td mat-cell *matCellDef="let employee">{{employee.email}}</td>
+      </ng-container>
+
+      <!-- Actions Column -->
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Actions</th>
+        <td mat-cell *matCellDef="let employee">
+          <button mat-raised-button color="primary" class="action-button" (click)="viewEmployee(employee)">
+            View
+          </button>
+          <button mat-raised-button color="accent" class="action-button" (click)="editEmployee(employee)">
+            Update
+          </button>
+          <button mat-raised-button color="warn" class="action-button" (click)="deleteEmployee(employee)">
+            Delete
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <!-- Loading Spinner -->
+    <div class="loading-container" *ngIf="loading">
+      <mat-spinner diameter="40"></mat-spinner>
+    </div>
+
+    <!-- No Data Message -->
+    <div class="no-data-message" *ngIf="!loading && (!employees || employees.length === 0)">
+      No employees found
+    </div>
+  </div>
+</div> 
